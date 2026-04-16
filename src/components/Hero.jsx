@@ -12,8 +12,10 @@ const Hero = () => {
   const containerRef = useRef(null);
 
   // GSAP Animation for the decorative line
+  // Using scaleX instead of width for GPU-only Composite phase (no Layout/Paint)
   useScrollReveal(lineRef, {
-    width: 0,
+    scaleX: 0,
+    transformOrigin: "left center",
     duration: 1.5,
     ease: "power4.out",
     scrollTrigger: {
@@ -37,7 +39,15 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
       {/* Background Decorative Elements */}
-      <div className="absolute inset-0 z-0">
+      {/* Mobile: lightweight CSS gradient (zero GPU cost) */}
+      <div
+        className="absolute inset-0 z-0 md:hidden"
+        style={{
+          background: 'radial-gradient(ellipse at 25% 25%, rgba(184, 134, 11, 0.04) 0%, transparent 60%), radial-gradient(ellipse at 75% 75%, rgba(38, 38, 38, 0.15) 0%, transparent 60%)'
+        }}
+      />
+      {/* Desktop: original blur elements (GPU can handle it) */}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-neutral-800/20 rounded-full blur-[120px]" />
       </div>
@@ -49,7 +59,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex items-center space-x-4"
+            className="flex items-center space-x-4 transform-gpu"
           >
             <div className="h-px w-8 bg-gold" />
             <span className="text-[10px] uppercase tracking-[0.6em] text-neutral-400 font-medium">Est. 1994</span>
@@ -65,10 +75,10 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 1.2,
-                  delay: i * 0.2,
+                  delay: i * 0.1, // Reduced stagger for mobile responsiveness
                   ease: [0.33, 1, 0.68, 1]
                 }}
-                className="inline-block mr-4 last:mr-0 premium-gpu"
+                className="inline-block mr-4 last:mr-0 transform-gpu will-change-transform"
               >
                 {word}
               </motion.span>
@@ -76,19 +86,20 @@ const Hero = () => {
           </h1>
 
           {/* Decorative Animated Line */}
-          <div className="relative w-full max-w-2xl h-px bg-neutral-800 my-4">
+          <div className="relative w-full max-w-2xl h-px bg-neutral-800 my-4 overflow-hidden">
             <div
               ref={lineRef}
-              className="absolute inset-0 bg-gold origin-left"
+              className="absolute inset-0 bg-gold transform-gpu will-change-transform"
+              style={{ transformOrigin: 'left' }}
             />
           </div>
 
           {/* Subheadline */}
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 1 }}
-            className="max-w-2xl text-lg md:text-xl text-neutral-400 font-sans leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }} // Trigger earlier
+            className="max-w-2xl text-lg md:text-xl text-neutral-400 font-sans leading-relaxed transform-gpu"
           >
             A premier Indian law firm specializing in <span className="text-white italic">Corporate Litigation</span>,
             <span className="text-white italic"> Cross-Border Arbitration</span>, and
@@ -103,15 +114,16 @@ const Hero = () => {
               type: "spring",
               stiffness: 100,
               damping: 20,
-              delay: 1.5
+              delay: 1 // Trigger earlier
             }}
+            className="transform-gpu"
           >
             <div className="px-8 py-4 border border-neutral-700 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-              <span className="text-xs uppercase tracking-[0.35em] text-neutral-400 font-medium">Advocates & Solicitors</span>
+              <span className="text-xs uppercase tracking-[0.35em] text-neutral-400 font-medium whitespace-nowrap">Advocates & Solicitors</span>
               <div className="h-4 w-px bg-neutral-700 hidden sm:block" />
-              <span className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-medium">Supreme Court · High Courts</span>
+              <span className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-medium whitespace-nowrap">Supreme Court · High Courts</span>
               <div className="h-4 w-px bg-neutral-700 hidden sm:block" />
-              <span className="text-xs uppercase tracking-[0.35em] text-neutral-400 font-medium">New Delhi · Mumbai · Bengaluru</span>
+              <span className="text-xs uppercase tracking-[0.35em] text-neutral-400 font-medium whitespace-nowrap">New Delhi · Mumbai · Bengaluru</span>
             </div>
           </motion.div>
         </div>
@@ -121,10 +133,10 @@ const Hero = () => {
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
         onClick={handleDiscover}
         aria-label="Scroll down to discover"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 cursor-pointer group"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 cursor-pointer group transform-gpu"
       >
         <span className="text-[11px] uppercase tracking-[0.45em] text-neutral-300 group-hover:text-gold transition-colors duration-300">
           Discover
