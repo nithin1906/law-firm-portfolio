@@ -7,6 +7,7 @@ import Stats from './components/Stats';
 import PracticeAreas from './components/PracticeAreas';
 import Insights from './components/Insights';
 import Footer from './components/Footer';
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   const [disclaimerAccepted, setDisclaimerAccepted] = useState(false);
@@ -86,6 +87,7 @@ function App() {
           </motion.main>
         )}
       </AnimatePresence>
+      <Analytics />
     </div>
   );
 }
