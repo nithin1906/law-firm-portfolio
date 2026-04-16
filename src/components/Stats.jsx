@@ -51,7 +51,7 @@ const StatItem = ({ value, label, suffix = "", delay = 0 }) => {
 
 const Stats = () => {
   return (
-    <section id="stats" className="bg-neutral-950 border-y border-neutral-800 relative z-10">
+    <section id="stats" className="bg-neutral-950 border-y border-neutral-800 relative z-10 scroll-mt-24">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 items-center divide-y divide-neutral-800 md:divide-y-0">
           <StatItem value={25} label="Years of Excellence" suffix="+" delay={0.1} />
