@@ -38,7 +38,7 @@ const Header = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`fixed top-0 left-0 w-full z-[80] transition-all duration-500 premium-gpu ${
           isScrolled
-            ? 'bg-neutral-950/95 md:bg-neutral-950/90 md:backdrop-blur-lg py-4 border-b border-neutral-800'
+            ? 'bg-surface/95 md:bg-surface/90 md:backdrop-blur-lg py-4 border-b border-border-base/50 shadow-sm'
             : 'bg-transparent py-8'
         }`}
       >
@@ -59,7 +59,7 @@ const Header = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="relative text-sm uppercase tracking-widest font-medium text-neutral-400 hover:text-white transition-colors duration-300 group whitespace-nowrap"
+                className="relative text-sm uppercase tracking-widest font-medium text-text-secondary hover:text-text-primary transition-colors duration-300 group whitespace-nowrap"
               >
                 {link.name}
                 <span className="absolute -bottom-2 left-1/2 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full group-hover:left-0" />
@@ -69,7 +69,7 @@ const Header = () => {
 
           {/* Mobile Toggle */}
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-text-primary p-2"
             onClick={() => setIsMobileMenuOpen(true)}
             aria-label="Open menu"
           >
@@ -86,7 +86,7 @@ const Header = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: "spring", damping: 30, stiffness: 200 }}
-            className="fixed inset-0 z-[90] bg-neutral-950 flex flex-col p-8"
+            className="fixed inset-0 z-[90] bg-surface flex flex-col p-8"
           >
             <div className="flex justify-between items-center">
               <span className="font-serif text-lg tracking-widest">LEX PRIME</span>
@@ -108,7 +108,7 @@ const Header = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.15 + i * 0.08 }}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-4xl font-serif font-bold hover:text-gold transition-colors group flex items-center gap-4"
+                  className="text-4xl font-serif font-bold text-text-primary hover:text-gold transition-colors group flex items-center gap-4"
                 >
                   <span className="text-gold/30 text-base font-sans font-normal tracking-widest group-hover:text-gold transition-colors">
                     0{i + 1}
@@ -118,8 +118,8 @@ const Header = () => {
               ))}
             </div>
 
-            <div className="py-8 border-t border-neutral-800">
-              <p className="text-neutral-500 text-xs tracking-[0.4em] font-serif uppercase">A Legacy of Excellence Since 1994</p>
+            <div className="py-8 border-t border-border-base/30">
+              <p className="text-text-muted text-xs tracking-[0.4em] font-serif uppercase">A Legacy of Excellence Since 1994</p>
             </div>
           </motion.div>
         )}

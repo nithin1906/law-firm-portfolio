@@ -43,13 +43,13 @@ const Hero = () => {
       <div
         className="absolute inset-0 z-0 md:hidden"
         style={{
-          background: 'radial-gradient(ellipse at 25% 25%, rgba(184, 134, 11, 0.04) 0%, transparent 60%), radial-gradient(ellipse at 75% 75%, rgba(38, 38, 38, 0.15) 0%, transparent 60%)'
+          background: 'linear-gradient(to bottom, rgba(245, 245, 245, 1) 0%, rgba(229, 231, 235, 0.5) 100%)'
         }}
       />
       {/* Desktop: original blur elements (GPU can handle it) */}
       <div className="absolute inset-0 z-0 hidden md:block">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-neutral-800/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gray-200/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gray-300/10 rounded-full blur-[120px]" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
@@ -62,12 +62,12 @@ const Hero = () => {
             className="flex items-center space-x-4 transform-gpu"
           >
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] uppercase tracking-[0.6em] text-neutral-400 font-medium">Est. 1994</span>
+            <span className="text-[10px] uppercase tracking-[0.6em] text-text-secondary font-medium">Est. 1994</span>
             <div className="h-px w-8 bg-gold" />
           </motion.div>
 
           {/* Headline */}
-          <h1 className="text-5xl md:text-8xl lg:text-9xl font-serif font-bold leading-tight tracking-tighter">
+          <h1 className="text-5xl md:text-8xl lg:text-9xl font-serif font-bold leading-tight tracking-tighter text-text-primary">
             {headlineWords.map((word, i) => (
               <motion.span
                 key={i}
@@ -86,7 +86,7 @@ const Hero = () => {
           </h1>
 
           {/* Decorative Animated Line */}
-          <div className="relative w-full max-w-2xl h-px bg-neutral-800 my-4 overflow-hidden">
+          <div className="relative w-full max-w-2xl h-px bg-gray-200 my-4 overflow-hidden">
             <div
               ref={lineRef}
               className="absolute inset-0 bg-gold transform-gpu will-change-transform"
@@ -99,11 +99,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }} // Trigger earlier
-            className="max-w-2xl text-lg md:text-xl text-neutral-400 font-sans leading-relaxed transform-gpu"
+            className="max-w-2xl text-lg md:text-xl text-text-body font-sans leading-relaxed transform-gpu"
           >
-            A premier Indian law firm specializing in <span className="text-white italic">Corporate Litigation</span>,
-            <span className="text-white italic"> Cross-Border Arbitration</span>, and
-            <span className="text-white italic"> Intellectual Property</span>.
+            A premier Indian law firm specializing in <span className="text-text-primary italic">Corporate Litigation</span>,
+            <span className="text-text-primary italic"> Cross-Border Arbitration</span>, and
+            <span className="text-text-primary italic"> Intellectual Property</span>.
           </motion.p>
 
           {/* Tagline Badge — replaces CTA buttons */}
@@ -118,12 +118,12 @@ const Hero = () => {
             }}
             className="transform-gpu"
           >
-            <div className="px-8 py-4 border border-neutral-700 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-              <span className="text-xs uppercase tracking-[0.35em] text-neutral-400 font-medium whitespace-nowrap">Advocates & Solicitors</span>
-              <div className="h-4 w-px bg-neutral-700 hidden sm:block" />
-              <span className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-medium whitespace-nowrap">Supreme Court · High Courts</span>
-              <div className="h-4 w-px bg-neutral-700 hidden sm:block" />
-              <span className="text-xs uppercase tracking-[0.35em] text-neutral-400 font-medium whitespace-nowrap">New Delhi · Mumbai · Bengaluru</span>
+            <div className="px-8 py-4 border border-gray-200 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 bg-surface/50 backdrop-blur-sm">
+              <span className="text-xs uppercase tracking-[0.35em] text-text-secondary font-medium whitespace-nowrap">Advocates & Solicitors</span>
+              <div className="h-4 w-px bg-gray-200 hidden sm:block" />
+              <span className="text-xs uppercase tracking-[0.35em] text-text-muted font-medium whitespace-nowrap">Supreme Court · High Courts</span>
+              <div className="h-4 w-px bg-gray-200 hidden sm:block" />
+              <span className="text-xs uppercase tracking-[0.35em] text-text-secondary font-medium whitespace-nowrap">New Delhi · Mumbai · Bengaluru</span>
             </div>
           </motion.div>
         </div>
@@ -138,14 +138,14 @@ const Hero = () => {
         aria-label="Scroll down to discover"
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 cursor-pointer group transform-gpu"
       >
-        <span className="text-[11px] uppercase tracking-[0.45em] text-neutral-300 group-hover:text-gold transition-colors duration-300">
+        <span className="text-[11px] uppercase tracking-[0.45em] text-text-secondary group-hover:text-gold transition-colors duration-300 font-medium">
           Discover
         </span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown className="w-5 h-5 text-neutral-300 group-hover:text-gold transition-colors duration-300" />
+          <ChevronDown className="w-5 h-5 text-text-secondary group-hover:text-gold transition-colors duration-300" />
         </motion.div>
       </motion.button>
     </section>

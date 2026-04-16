@@ -32,7 +32,7 @@ const InsightCard = ({ article, delay }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.7, delay }}
-    className="group flex flex-col border border-neutral-800 bg-neutral-900 hover:border-gold/30 transition-all duration-500 overflow-hidden"
+    className="group flex flex-col border border-border-base/30 bg-surface hover:border-border-hover transition-all duration-500 overflow-hidden shadow-sm"
   >
     {/* Top Accent */}
     <div className="h-px w-0 bg-gold group-hover:w-full transition-all duration-700" />
@@ -43,26 +43,26 @@ const InsightCard = ({ article, delay }) => (
         <span className="text-[10px] uppercase tracking-[0.4em] text-gold font-medium">
           {article.category}
         </span>
-        <div className="flex items-center gap-2 text-neutral-600">
+        <div className="flex items-center gap-2 text-text-muted">
           <Calendar className="w-3 h-3" />
           <span className="text-[10px] tracking-widest">{article.date}</span>
         </div>
       </div>
 
       {/* Title */}
-      <h3 className="text-xl font-serif font-bold leading-snug group-hover:text-gold/90 transition-colors duration-300">
+      <h3 className="text-xl font-serif font-bold leading-snug text-text-primary group-hover:text-gold/90 transition-colors duration-300">
         {article.title}
       </h3>
 
       {/* Divider */}
-      <div className="h-px bg-neutral-800 w-12" />
+      <div className="h-px bg-border-base/50 w-12" />
 
       {/* Excerpt */}
-      <p className="text-sm text-neutral-500 leading-relaxed flex-1">{article.excerpt}</p>
+      <p className="text-sm text-text-body leading-relaxed flex-1">{article.excerpt}</p>
 
       {/* Read More */}
       <div className="pt-2">
-        <button className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-neutral-500 group-hover:text-white transition-colors duration-300">
+        <button className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-text-secondary group-hover:text-text-primary transition-colors duration-300">
           <span>Read More</span>
           <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
         </button>
@@ -72,7 +72,7 @@ const InsightCard = ({ article, delay }) => (
 );
 
 const Insights = () => (
-  <section id="insights" className="py-32 bg-neutral-950 border-t border-neutral-900">
+  <section id="insights" className="py-32 bg-canvas border-t border-border-base/40">
     <div className="container mx-auto px-6">
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
@@ -91,7 +91,7 @@ const Insights = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-serif font-bold"
+            className="text-4xl md:text-5xl font-serif font-bold text-text-primary"
           >
             From the <span className="italic text-gold">Chambers</span>
           </motion.h2>
@@ -101,14 +101,14 @@ const Insights = () => (
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="max-w-xs text-neutral-500 text-sm font-sans italic border-l border-gold/30 pl-6"
+          className="max-w-xs text-text-secondary text-sm font-sans italic border-l border-gold/30 pl-6"
         >
           Perspectives on law, policy, and practice from our senior partners.
         </motion.p>
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-800 border border-neutral-800">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border-base/40 border border-border-base/40">
         {insightArticles.map((article, i) => (
           <InsightCard key={i} article={article} delay={i * 0.12} />
         ))}

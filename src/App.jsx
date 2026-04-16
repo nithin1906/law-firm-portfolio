@@ -26,7 +26,7 @@ function App() {
   };
 
   return (
-    <div className="bg-neutral-950 min-h-screen">
+    <div className="bg-canvas min-h-screen">
       <BciModal
         isOpen={!disclaimerAccepted}
         onAccept={handleAccept}
@@ -46,7 +46,7 @@ function App() {
             <Insights />
 
             {/* Strategic Network / Partners */}
-            <section id="partners" className="py-28 border-t border-neutral-900 bg-black/30">
+            <section id="partners" className="py-28 border-t border-border-base/50 bg-canvas">
               <div className="container mx-auto px-6 text-center">
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
@@ -58,7 +58,7 @@ function App() {
                   {/* Section Label */}
                   <div className="flex items-center justify-center gap-4">
                     <div className="h-px w-8 bg-gold" />
-                    <span className="text-xs uppercase tracking-[0.5em] text-neutral-300 font-medium">
+                    <span className="text-xs uppercase tracking-[0.5em] text-text-secondary font-medium">
                       Strategic Network
                     </span>
                     <div className="h-px w-8 bg-gold" />
@@ -73,7 +73,7 @@ function App() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.08 }}
-                        className="h-16 flex items-center justify-center font-serif text-xl tracking-widest border border-neutral-700 text-neutral-300 hover:border-gold/40 hover:text-white transition-all duration-500"
+                        className="h-16 flex items-center justify-center font-serif text-xl tracking-widest border border-border-base/30 text-text-primary hover:border-border-hover hover:text-gold transition-all duration-500 shadow-sm bg-surface"
                       >
                         {name}
                       </motion.div>
