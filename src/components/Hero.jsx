@@ -68,7 +68,7 @@ const Hero = () => {
                   delay: i * 0.2,
                   ease: [0.33, 1, 0.68, 1]
                 }}
-                className="inline-block mr-4 last:mr-0"
+                className="inline-block mr-4 last:mr-0 premium-gpu"
               >
                 {word}
               </motion.span>

@@ -36,9 +36,9 @@ const Header = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`fixed top-0 left-0 w-full z-[80] transition-all duration-500 ${
+        className={`fixed top-0 left-0 w-full z-[80] transition-all duration-500 premium-gpu ${
           isScrolled
-            ? 'bg-neutral-950/90 backdrop-blur-lg py-4 border-b border-neutral-800'
+            ? 'bg-neutral-950/95 md:bg-neutral-950/90 md:backdrop-blur-lg py-4 border-b border-neutral-800'
             : 'bg-transparent py-8'
         }`}
       >

@@ -30,6 +30,23 @@
   ::selection {
     @apply bg-gold/30 text-white;
   }
+
+  /* Mobile Performance Fixes */
+  section {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+
+  /* Disable expensive blurs on mobile Safari if needed */
+  .mobile-blur {
+    @apply bg-black/90 backdrop-blur-xl md:bg-black/80;
+  }
+
+  .premium-gpu {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
 }
 
 @keyframes pulse-glow {

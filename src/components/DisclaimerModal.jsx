@@ -42,7 +42,7 @@ const DisclaimerModal = ({ isOpen, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8 bg-black/85 backdrop-blur-xl"
+          className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8 bg-black/95 md:bg-black/85 md:backdrop-blur-xl premium-gpu"
           onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
         >
           <motion.div
