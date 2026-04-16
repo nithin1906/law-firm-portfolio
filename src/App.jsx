@@ -73,7 +73,7 @@ function App() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.08 }}
-                        className="h-16 flex items-center justify-center font-serif text-xl tracking-widest border border-border-base/30 text-text-primary hover:border-border-hover hover:text-gold transition-all duration-500 shadow-sm bg-surface"
+                        className="h-20 flex items-center justify-center font-serif text-xl tracking-widest border border-border-base/10 text-text-primary rounded-xl shadow-premium hover:shadow-premium-hover transition-all duration-500 bg-surface"
                       >
                         {name}
                       </motion.div>

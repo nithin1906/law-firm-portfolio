@@ -52,3 +52,22 @@
 .animate-pulse-glow {
   animation: pulse-glow 2s infinite;
 }
+
+/* Atmospheric Refinements */
+.shadow-premium {
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.04),
+    0 4px 6px -4px rgba(0, 0, 0, 0.02),
+    0 0 0 1px rgba(0, 0, 0, 0.01);
+}
+
+.shadow-premium-hover {
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.08),
+    0 8px 10px -6px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.bg-hero-atmospheric {
+  background: radial-gradient(circle at center, #E5E5E5 0%, #D3D3D3 100%);
+}

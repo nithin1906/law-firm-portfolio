@@ -36,7 +36,7 @@ const Hero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-hero-atmospheric"
     >
       {/* Background Decorative Elements */}
       {/* Mobile: lightweight CSS gradient (zero GPU cost) */}
@@ -47,9 +47,9 @@ const Hero = () => {
         }}
       />
       {/* Desktop: original blur elements (GPU can handle it) */}
-      <div className="absolute inset-0 z-0 hidden md:block">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gray-200/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gray-300/10 rounded-full blur-[120px]" />
+      <div className="absolute inset-0 z-0 hidden md:block opacity-60">
+        <div className="absolute top-1/6 left-1/4 w-[600px] h-[600px] bg-white/20 rounded-full blur-[140px]" />
+        <div className="absolute bottom-1/6 right-1/4 w-[600px] h-[600px] bg-gray-200/10 rounded-full blur-[140px]" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
@@ -118,12 +118,12 @@ const Hero = () => {
             }}
             className="transform-gpu"
           >
-            <div className="px-8 py-4 border border-gray-200 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 bg-surface/50 backdrop-blur-sm">
-              <span className="text-xs uppercase tracking-[0.35em] text-text-secondary font-medium whitespace-nowrap">Advocates & Solicitors</span>
-              <div className="h-4 w-px bg-gray-200 hidden sm:block" />
-              <span className="text-xs uppercase tracking-[0.35em] text-text-muted font-medium whitespace-nowrap">Supreme Court · High Courts</span>
-              <div className="h-4 w-px bg-gray-200 hidden sm:block" />
-              <span className="text-xs uppercase tracking-[0.35em] text-text-secondary font-medium whitespace-nowrap">New Delhi · Mumbai · Bengaluru</span>
+            <div className="px-10 py-5 border border-border-base/20 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 bg-surface/80 shadow-premium rounded-full">
+              <span className="text-[10px] uppercase tracking-[0.4em] text-text-secondary font-medium whitespace-nowrap">Advocates & Solicitors</span>
+              <div className="h-4 w-px bg-border-base/30 hidden sm:block" />
+              <span className="text-[10px] uppercase tracking-[0.4em] text-text-muted font-medium whitespace-nowrap">Supreme Court · High Courts</span>
+              <div className="h-4 w-px bg-border-base/30 hidden sm:block" />
+              <span className="text-[10px] uppercase tracking-[0.4em] text-text-secondary font-medium whitespace-nowrap">New Delhi · Mumbai · Bengaluru</span>
             </div>
           </motion.div>
         </div>

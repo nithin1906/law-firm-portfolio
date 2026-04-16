@@ -17,7 +17,7 @@ const BciModal = ({ isOpen, onAccept }) => {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 10 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="relative max-w-2xl w-full bg-surface border border-border-base p-8 md:p-12 my-auto shadow-2xl"
+            className="relative max-w-2xl w-full bg-surface border border-border-base/20 p-8 md:p-12 my-auto shadow-2xl rounded-2xl"
           >
             {/* Gold Accent Top Bar */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-50" />
@@ -34,7 +34,7 @@ const BciModal = ({ isOpen, onAccept }) => {
                 <div className="h-px w-24 bg-gray-100 mx-auto" />
               </div>
 
-              <div className="space-y-6 text-text-body font-sans leading-relaxed text-sm md:text-base text-left bg-gray-50/50 p-6 border border-border-base/30">
+              <div className="space-y-6 text-text-body font-sans leading-relaxed text-sm md:text-base text-left bg-gray-50/50 p-6 border border-border-base/30 rounded-lg">
                 <p>
                   As per the rules of the Bar Council of India, Lex Prime Associates (the "Firm") is not permitted to solicit work or advertise. 
                   By clicking on the <span className="text-text-primary font-bold">"I Agree"</span> button below, the user acknowledges the following:
@@ -51,10 +51,9 @@ const BciModal = ({ isOpen, onAccept }) => {
 
               <button
                 onClick={onAccept}
-                className="group relative w-full md:w-auto px-12 py-4 bg-text-primary text-surface font-semibold tracking-widest uppercase text-sm hover:bg-gold transition-all duration-500 overflow-hidden"
+                className="px-10 py-4 bg-text-primary text-surface text-xs uppercase tracking-[0.3em] font-bold rounded-full hover:bg-gold transition-all duration-300 shadow-lg"
               >
-                <span className="relative z-10">I Agree</span>
-                <div className="absolute inset-0 bg-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                I Agree
               </button>
             </div>
           </motion.div>

@@ -32,7 +32,8 @@ const InsightCard = ({ article, delay }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.7, delay }}
-    className="group flex flex-col border border-border-base/30 bg-surface hover:border-border-hover transition-all duration-500 overflow-hidden shadow-sm"
+    whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
+    className="group flex flex-col border border-border-base/10 bg-gradient-to-b from-surface to-gray-50/20 rounded-xl shadow-premium hover:shadow-premium-hover transition-all duration-500 overflow-hidden shadow-sm"
   >
     {/* Top Accent */}
     <div className="h-px w-0 bg-gold group-hover:w-full transition-all duration-700" />
@@ -108,7 +109,7 @@ const Insights = () => (
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border-base/40 border border-border-base/40">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {insightArticles.map((article, i) => (
           <InsightCard key={i} article={article} delay={i * 0.12} />
         ))}

@@ -31,7 +31,7 @@ const Footer = () => {
 
       <footer id="contact" className="bg-canvas border-t border-border-base/50 pt-24 pb-8 overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="bg-surface border border-border-base/40 p-12 md:p-16 mb-16 shadow-sm">
+          <div className="bg-surface border border-border-base/40 p-12 md:p-16 mb-16 shadow-premium rounded-xl">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-16">
             {/* Brand Column */}
             <div className="space-y-8">
@@ -46,10 +46,10 @@ const Footer = () => {
                 Upholding the highest standards of legal excellence and professional integrity across India's financial hubs.
               </p>
               <div className="flex items-center space-x-4">
-                <a href="#" className="p-2 border border-border-base/30 text-text-secondary hover:text-text-primary hover:border-border-hover transition-all duration-300">
+                <a href="#" className="p-3 border border-border-base/30 text-text-secondary hover:text-text-primary hover:border-border-hover transition-all duration-300 rounded-full">
                   <Share2 className="w-4 h-4" />
                 </a>
-                <a href="#" className="p-2 border border-border-base/30 text-text-secondary hover:text-text-primary hover:border-border-hover transition-all duration-300">
+                <a href="#" className="p-3 border border-border-base/30 text-text-secondary hover:text-text-primary hover:border-border-hover transition-all duration-300 rounded-full">
                   <Link className="w-4 h-4" />
                 </a>
               </div>
@@ -98,7 +98,7 @@ const Footer = () => {
               </p>
               <button
                 onClick={() => setIsDisclaimerOpen(true)}
-                className="text-[10px] uppercase tracking-[0.2em] font-bold text-text-secondary border-b border-gray-200 pb-1 hover:text-gold hover:border-gold transition-all duration-300 whitespace-nowrap"
+                className="px-6 py-2.5 text-[10px] uppercase tracking-[0.2em] font-bold text-text-secondary border border-border-base/30 rounded-full hover:bg-text-primary hover:text-surface hover:border-text-primary transition-all duration-400 whitespace-nowrap"
               >
                 Full Disclaimer
               </button>

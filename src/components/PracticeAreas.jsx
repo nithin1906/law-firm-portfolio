@@ -15,14 +15,14 @@ const PracticeCard = ({ icon: Icon, title, description, delay }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }} // Trigger earlier for smoother scroll
       transition={{ duration: 0.6, delay }}
-      whileHover={{ y: -5 }} // Reduced for performance
-      className="group relative p-10 bg-surface border border-border-base hover:border-border-hover transition-all duration-500 overflow-hidden transform-gpu will-change-transform"
+      whileHover={{ scale: 1.01, transition: { duration: 0.3 } }} 
+      className="group relative p-10 bg-gradient-to-b from-surface to-gray-50/20 border border-border-base/10 rounded-xl shadow-premium hover:shadow-premium-hover transition-all duration-500 overflow-hidden transform-gpu will-change-transform"
     >
       {/* Background Gradient - GPU optimized */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-100/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       
       <div className="relative z-10 space-y-6">
-        <div className="w-16 h-16 flex items-center justify-center bg-surface border border-border-base/50 rounded-sm group-hover:border-gold/50 transition-colors duration-500 shadow-sm">
+        <div className="w-16 h-16 flex items-center justify-center bg-surface border border-border-base/20 rounded-xl group-hover:border-gold/30 transition-colors duration-500 shadow-sm">
           <Icon className="w-8 h-8 text-text-muted group-hover:text-gold transition-colors duration-500" />
         </div>
         
@@ -95,7 +95,7 @@ const PracticeAreas = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border-base border border-border-base shadow-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {areas.map((area, i) => (
             <PracticeCard key={i} {...area} />
           ))}
