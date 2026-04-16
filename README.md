@@ -20,15 +20,6 @@ A premium, production-ready landing page for a fictional top-tier Indian law fir
 - **GSAP & ScrollTrigger**: Precision scroll-driven reveals and counters.
 - **Lucide React**: Lightweight, scalable iconography.
 
-## 🚀 Deployment
-
-This project is optimized for deployment on **Vercel**. 
-
-1. Push this repository to your GitHub.
-2. Connect the repository in your Vercel dashboard.
-3. The build settings should be automatically detected (Vite).
-4. Deploy!
-
 ## 📜 License
 
 This project is for demonstration and portfolio purposes.

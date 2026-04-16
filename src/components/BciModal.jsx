@@ -10,14 +10,14 @@ const BciModal = ({ isOpen, onAccept }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-xl"
+          className="fixed inset-0 z-[100] flex justify-center items-start md:items-center p-4 bg-black/90 backdrop-blur-xl overflow-y-auto"
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 10 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="relative max-w-2xl w-full bg-neutral-900 border border-neutral-800 p-8 md:p-12 shadow-2xl overflow-hidden"
+            className="relative max-w-2xl w-full bg-neutral-900 border border-neutral-800 p-8 md:p-12 my-auto shadow-2xl"
           >
             {/* Gold Accent Top Bar */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-50" />
