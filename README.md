@@ -2,6 +2,9 @@
 
 A premium, production-ready landing page for a fictional top-tier Indian law firm. This project is a B2B portfolio piece designed to demonstrate technical expertise in React, Tailwind CSS v4, Framer Motion, and GSAP, while maintaining strict Bar Council of India (BCI) compliance.
 
+## 📝 Project Status
+
+**This is a personal hobby project.** It was created solely to showcase modern web development skills, design aesthetics, and technical implementation. It is not a real law firm and is not affiliated with, nor does it represent, any actual legal entity or organization. All names, data, and content within this application are purely fictional and created for demonstration purposes only.
 ## ✨ Key Features
 
 - **BCI Compliance Gateway**: A mandatory disclaimer modal that ensures regulatory compliance before site interaction.
